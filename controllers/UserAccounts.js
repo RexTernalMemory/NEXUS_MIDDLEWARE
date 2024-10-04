@@ -1,0 +1,443 @@
+import axios from "axios";
+
+export async function Register(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/register`, req.body)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[POST REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
+
+export async function UpdateUser(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/updateUser`, req.body)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[POST REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
+
+export async function GetUsers(req, res) {
+    const { API } = process.env;
+    await axios.get(`${API}/getUsers`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
+
+export async function GetUserInfo(req, res) {
+    const { API } = process.env;
+    await axios.get(`${API}/getUserInfo/${req.params.id}`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
+
+export async function Login(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/login`, req.body)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[POST REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
+
+export async function PasswordAttempt(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/passwordAttempt`, req.body)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[POST REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
+
+export async function VerfiedAccount(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/verifiedAccount`, req.body)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
+
+export async function ResendOTP(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/resendOtp/${req.params.Username}`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
+
+export async function CancelOTP(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/cancelOtp/${req.params.Username}`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
+
+export async function GetBrachNameList(req, res) {
+    const { API } = process.env;
+    await axios.get(`${API}/getBrachNameList`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]', error);
+            console.log('ERROR:', error);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json(error)
+        });
+}
+
+export async function GetDepartmentList(req, res) {
+    const { API } = process.env;
+    await axios.get(`${API}/getDepartmentList`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]', error);
+            console.log('ERROR:', error);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json(error)
+        });
+}
+
+export async function GetRoleList(req, res) {
+    const { API } = process.env;
+    await axios.get(`${API}/getRoleList/${req.params.id}`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]', error);
+            console.log('ERROR:', error);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json(error)
+        });
+}
+
+export async function VerifyOtp(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/verifyOtp`, req.body)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
+
+export async function ForgotPassword(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/forgotPassword/${req.params.Username}`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
+
+export async function UnlockAccount(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/unlockAccount/${req.params.Username}`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
+
+export async function ValidateURL(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/validateURL/${req.params.URL}`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
+
+export async function CheckPassword(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/checkPassword/${req.params.id}`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
+
+export async function ResetPassword(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/user-management/resetPassword`, req.body)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
+
+export async function SavePassword(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/savePassword`, req.body)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
+
+export async function ReseterPassword(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/resetPassword`, req.body)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                Code: error.code,
+                Message: error.message,
+                Status: error.status
+            })
+        });
+}
