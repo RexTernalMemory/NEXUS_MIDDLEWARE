@@ -107,5 +107,5 @@ server.listen(() => {
     console.log(`IO Server: Listening on port ${PORT}`)
 })
 
-const httpsServer = https.createServer({}, app) //creating https server with an empty ssl certificate object
+const httpsServer = https.createServer(app) //creating https server with an empty ssl certificate object
 httpsServer.listen(HTTPS_PORT)
