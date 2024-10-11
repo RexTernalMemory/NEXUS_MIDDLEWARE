@@ -5,12 +5,7 @@ import morgan from 'morgan'
 import compression from 'compression'
 import { Server } from 'socket.io'
 import { createServer } from 'http'
-import fs from 'fs';
-import path from 'path'
-import https from 'https'
-
 import os from 'os'
-import dns from 'dns'
 
 import { UserAccountRoute } from './routes/UserAccountRoutes.js'
 import { RoleAccessRoute } from './routes/RoleAccessRoutes.js'
@@ -45,7 +40,7 @@ app.use(cors({
         "Access-Control-Allow-Credentials",
     ],
 }))
-const { PORT,HTTPS_PORT, ACCESS } = process.env;
+const { PORT,ACCESS } = process.env;
 
 app.use(ACCESS, UserAccountRoute)
 app.use(ACCESS, RoleAccessRoute)
@@ -104,8 +99,10 @@ io.on('connection', (socket) => {
 })
 
 server.listen(() => {
-    console.log(`IO Server: Listening on port ${PORT}`)
+    console.log(`HTTP Server: Listening on port ${PORT}`)
 })
 
-const httpsServer = https.createServer(app) //creating https server with an empty ssl certificate object
-httpsServer.listen(HTTPS_PORT)
+//const httpsServer = https.createServer({}, app) //creating https server with an empty ssl certificate object
+//httpsServer.listen(HTTPS_PORT, () => {
+//    console.log(`HTTPS Server: Listening on port ${HTTPS_PORT}`)
+//})
