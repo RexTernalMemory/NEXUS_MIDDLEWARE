@@ -3,7 +3,7 @@ const route = express.Router()
 
 import {
     Register, UpdateUser, GetUsers, GetUserInfo, Login, PasswordAttempt,
-    VerfiedAccount, ResendOTP, CancelOTP, GetBrachNameList, GetDepartmentList,
+    VerifiedAccount, ResendOTP, CancelOTP, GetBrachNameList, GetDepartmentList,
     GetRoleList, VerifyOtp, ForgotPassword, UnlockAccount, ValidateURL, CheckPassword,
     ResetPassword, SavePassword, ReseterPassword
 } from '../controllers/UserAccounts.js'
@@ -14,7 +14,7 @@ route.get('/getUsers', GetUsers)
 route.get('/getUserInfo/:id', GetUserInfo)
 route.post('/login', Login)
 route.post('/passwordAttempt', PasswordAttempt)
-route.post('/verifiedAccount', VerfiedAccount)
+route.post('/verifiedAccount', VerifiedAccount)
 route.post('/resendOtp/:Username', ResendOTP)
 route.post('/cancelOtp/:Username', CancelOTP)
 route.get('/getBrachNameList', GetBrachNameList)

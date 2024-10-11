@@ -10,6 +10,8 @@ export async function DefaultAccessList(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]', error);
+            console.log('FILE: RoleAccess');
+            console.log('/defaultAccessList');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -27,6 +29,8 @@ export async function CustomAccessList(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]', error);
+            console.log('FILE: RoleAccess');
+            console.log('/customAccessList');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -44,6 +48,8 @@ export async function UpdateRole(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]', error);
+            console.log('FILE: RoleAccess');
+            console.log('/updateRole');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');

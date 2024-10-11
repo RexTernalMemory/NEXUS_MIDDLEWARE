@@ -10,6 +10,8 @@ export async function GetMunicipalityArea(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]', error);
+            console.log('FILE: Municipality');
+            console.log('/getMunicipalityArea');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -27,6 +29,8 @@ export async function GetProvinceList(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]', error);
+            console.log('FILE: Municipality');
+            console.log('/getProvinceList');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -44,6 +48,8 @@ export async function GetMunicipalityList(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]', error);
+            console.log('FILE: Municipality');
+            console.log('/getMunicipalityList');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -61,6 +67,8 @@ export async function GetBarangayList(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]', error);
+            console.log('FILE: Municipality');
+            console.log('/getBarangayList');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -78,6 +86,8 @@ export async function AddMunicipality(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]', error);
+            console.log('FILE: Municipality');
+            console.log('/addMunicipality');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -95,6 +105,8 @@ export async function EditMunicipality(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]', error);
+            console.log('FILE: Municipality');
+            console.log('/editMunicipality');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
