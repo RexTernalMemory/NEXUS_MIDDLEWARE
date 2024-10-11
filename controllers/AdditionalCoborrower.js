@@ -10,6 +10,8 @@ export async function AddAdditionalCoborrower(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: AdditionalCoborrower');
+            console.log('/addAdditionalCoborrower');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -33,6 +35,8 @@ export async function AdditionalCoborrowerdelete(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: AdditionalCoborrower');
+            console.log('/AdditionalCoborrowerdelete');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);

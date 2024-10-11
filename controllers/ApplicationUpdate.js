@@ -7,9 +7,12 @@ export async function UpdateDetails(req, res) {
             res.json(result.data)
         })
         .catch(error => {
+            console.log(error.response.data)
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: ApplicationUpdate');
+            console.log('/updateDetails');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -33,6 +36,8 @@ export async function UpdateAppLCDetails(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: ApplicationUpdate');
+            console.log('/updateAppLCDetails');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -56,6 +61,8 @@ export async function UpdateAppDetails(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: ApplicationUpdate');
+            console.log('/updateAppDetails');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);

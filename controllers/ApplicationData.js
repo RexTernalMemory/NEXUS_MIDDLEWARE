@@ -10,6 +10,8 @@ export async function GetTrackLoan(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: ApplicationData');
+            console.log('/getTrackLoan');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -33,6 +35,8 @@ export async function GetAppDataList(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]');
+            console.log('FILE: ApplicationData');
+            console.log('/getAppDataList');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -56,6 +60,8 @@ export async function GetClientDataList(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]');
+            console.log('FILE: ApplicationData');
+            console.log('/getClientDataList');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -79,6 +85,8 @@ export async function CheckLoan(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: ApplicationData');
+            console.log('/checkLoan');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -94,14 +102,16 @@ export async function CheckLoan(req, res) {
 
 export async function GetDuplicateLoans(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/getDuplicateLoans`, req.body)
+    await axios.get(`${API}/getDuplicateLoans/${req.params.FN}/${req.params.LN}/${req.params.LAI}`)
         .then((result) => {
             res.json(result.data)
         })
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[POST REQUEST]');
+            console.log('[GET REQUEST]');
+            console.log('FILE: ApplicationData');
+            console.log('/getDuplicateLoans');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);

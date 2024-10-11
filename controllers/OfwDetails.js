@@ -10,6 +10,8 @@ export async function GetListRelationship(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]', error);
+            console.log('FILE: OfwDetails');
+            console.log('/getListRelationship');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -27,6 +29,8 @@ export async function GetCountry(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]', error);
+            console.log('FILE: OfwDetails');
+            console.log('/getCountry');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -44,6 +48,8 @@ export async function GetIDtype(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]', error);
+            console.log('FILE: OfwDetails');
+            console.log('/getIDtype');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -61,6 +67,8 @@ export async function GetAgency(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]', error);
+            console.log('FILE: OfwDetails');
+            console.log('/GetAgency');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -78,6 +86,65 @@ export async function GetSuffix(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]', error);
+            console.log('FILE: OfwDetails');
+            console.log('/GetSuffix');
+            console.log('ERROR:', error);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json(error)
+        });
+}
+
+export async function GetCollectionArea(req, res) {
+    const { API } = process.env;
+    await axios.get(`${API}/OFWDetails/getCollectionArea`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]', error);
+            console.log('FILE: OfwDetails');
+            console.log('/getCollectionArea');
+            console.log('ERROR:', error);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json(error)
+        });
+}
+
+export async function GetJobCategory(req, res) {
+    const { API } = process.env;
+    await axios.get(`${API}/OFWDetails/getJobCategory`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]', error);
+            console.log('FILE: OfwDetails');
+            console.log('/getJobCategory');
+            console.log('ERROR:', error);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json(error)
+        });
+}
+
+export async function GetPosition(req, res) {
+    const { API } = process.env;
+    await axios.get(`${API}/OFWDetails/getPosition/${req.params.category}`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]', error);
+            console.log('FILE: OfwDetails');
+            console.log('/getPosition');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');

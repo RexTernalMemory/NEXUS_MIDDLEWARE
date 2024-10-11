@@ -5,7 +5,7 @@ import { GetBarangay, GetMuniArea, GetBarangayList, GetProvince, AddBarangay, Ed
 
 route.get('/getBarangay', GetBarangay)
 route.get('/getMuniArea/:provinceCode', GetMuniArea)
-route.get('/getBarangayList/:MuniCode', GetBarangayList)
+route.get('/getbarangaylist/:MuniCode', GetBarangayList)
 route.get('/getProvince', GetProvince)
 route.post('/addBarangay', AddBarangay)
 route.post('/editBarangay', EditBarangay)

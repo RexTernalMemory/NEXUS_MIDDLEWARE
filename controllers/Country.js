@@ -10,6 +10,8 @@ export async function GetInternationalSubGroup(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]');
+            console.log('FILE: Country');
+            console.log('/getInternationalSubGroup');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -33,6 +35,8 @@ export async function GetInternationalGroup(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: Country');
+            console.log('/getInternationalGroup');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -56,6 +60,8 @@ export async function AddCountry(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: Country');
+            console.log('/addCountry');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -79,6 +85,8 @@ export async function EditCountry(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: Country');
+            console.log('/editCountry');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -102,6 +110,8 @@ export async function GetCountryList(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]');
+            console.log('FILE: Country');
+            console.log('/getCountryList');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
