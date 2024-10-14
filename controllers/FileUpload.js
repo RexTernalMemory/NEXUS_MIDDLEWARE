@@ -2,20 +2,17 @@ import axios from "axios";
 import fs from 'fs'
 
 async function ConvertToBlob(files) {
-    const promises = files.map(file => {
-        return new Promise((resolve, reject) => {
+    const FileData = files.map(file => {
+        return new Promise((res, rej) => {
             fs.readFile(file.path, (err, data) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve({ file, data, });
-                }
-            });
-        });
-    });
+                if (err) { rej(err); }
+                else { res({ file, data, }) }
+            })
+        })
+    })
 
-    const fileData = await Promise.all(promises);
-    return fileData;
+    const Blob = await Promise.all(FileData);
+    return Blob;
 }
 
 export async function GetFileType(req, res) {
@@ -28,6 +25,8 @@ export async function GetFileType(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]');
+            console.log('FILE: FileUpload');
+            console.log('/getFileType');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -51,6 +50,8 @@ export async function GetFileList(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]');
+            console.log('FILE: FileUpload');
+            console.log('/getFileList');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -95,6 +96,8 @@ export async function UploadFileReq(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: FileUpload');
+            console.log('/uploadFileReq');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -138,6 +141,8 @@ export async function UploadFileFin(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: FileUpload');
+            console.log('/uploadFileFin');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -162,6 +167,8 @@ export async function UpdateFileStatus(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: FileUpload');
+            console.log('/updateFileStatus');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);

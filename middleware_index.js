@@ -6,6 +6,7 @@ import compression from 'compression'
 import { Server } from 'socket.io'
 import { createServer } from 'http'
 import os from 'os'
+import cron from 'node-cron'
 
 import { UserAccountRoute } from './routes/UserAccountRoutes.js'
 import { RoleAccessRoute } from './routes/RoleAccessRoutes.js'
@@ -40,7 +41,7 @@ app.use(cors({
         "Access-Control-Allow-Credentials",
     ],
 }))
-const { PORT,ACCESS } = process.env;
+const { PORT, ACCESS } = process.env;
 
 app.use(ACCESS, UserAccountRoute)
 app.use(ACCESS, RoleAccessRoute)
@@ -101,6 +102,12 @@ io.on('connection', (socket) => {
 server.listen(() => {
     console.log(`HTTP Server: Listening on port ${PORT}`)
 })
+
+/*let value = 0;
+cron.schedule('* * * * *', () => {
+    console.log('WORKING: ' + value);
+    value += 1
+})*/
 
 //const httpsServer = https.createServer({}, app) //creating https server with an empty ssl certificate object
 //httpsServer.listen(HTTPS_PORT, () => {

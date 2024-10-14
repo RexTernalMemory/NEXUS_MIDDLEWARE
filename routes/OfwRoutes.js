@@ -11,6 +11,6 @@ route.get('/OFWDetails/GetAgency', GetAgency)
 route.get('/OFWDetails/GetSuffix', GetSuffix)
 route.get('/OFWDetails/getCollectionArea', GetCollectionArea)
 route.get('/OFWDetails/getJobCategory', GetJobCategory)
-route.get('/OFWDetails/getPosition.:category', GetPosition)
+route.get('/OFWDetails/getPosition/:category', GetPosition)
 
 export { route as OfwRoute }
