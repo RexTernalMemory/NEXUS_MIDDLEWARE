@@ -24,6 +24,7 @@ import { ApplyLoanRoute } from './routes/ApplyLoanRoute.js'
 import { ApplicationUpdateRoute } from './routes/ApplicationUpdateRoute.js'
 import { ApplicationDataRoute } from './routes/ApplicationDataRoute.js'
 import { AddAdditionalCoborrowerRoute } from './routes/AdditionalCoborrowerRoute.js'
+import { GetDataRoute } from './routes/GetDataRoutes.js'
 
 dotenv.config()
 const app = express()
@@ -59,6 +60,7 @@ app.use(ACCESS, ApplyLoanRoute)
 app.use(ACCESS, ApplicationUpdateRoute)
 app.use(ACCESS, ApplicationDataRoute)
 app.use(ACCESS, AddAdditionalCoborrowerRoute)
+app.use(ACCESS, GetDataRoute)
 
 app.get('/test', (req, res) => {
     res.send('ANO NG GALING MO');
