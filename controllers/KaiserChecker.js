@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function GetKaiser(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/getKaiser/${req.params.fullname}`)
+    await axios.post(`${API}/getKaiser`, req.body)
         .then((result) => {
             res.json(result.data)
         })

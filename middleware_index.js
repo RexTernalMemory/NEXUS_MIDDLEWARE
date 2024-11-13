@@ -5,8 +5,12 @@ import morgan from 'morgan'
 import compression from 'compression'
 import { Server } from 'socket.io'
 import { createServer } from 'http'
+import fs from 'fs';
+import path from 'path'
+import https from 'https'
+
 import os from 'os'
-import cron from 'node-cron'
+import dns from 'dns'
 
 import { UserAccountRoute } from './routes/UserAccountRoutes.js'
 import { RoleAccessRoute } from './routes/RoleAccessRoutes.js'
@@ -25,6 +29,7 @@ import { ApplicationUpdateRoute } from './routes/ApplicationUpdateRoute.js'
 import { ApplicationDataRoute } from './routes/ApplicationDataRoute.js'
 import { AddAdditionalCoborrowerRoute } from './routes/AdditionalCoborrowerRoute.js'
 import { GetDataRoute } from './routes/GetDataRoutes.js'
+import { GetRoutes } from './routes/GetRoutes.js'
 
 dotenv.config()
 const app = express()
@@ -42,7 +47,7 @@ app.use(cors({
         "Access-Control-Allow-Credentials",
     ],
 }))
-const { PORT, ACCESS } = process.env;
+const { PORT,HTTPS_PORT, ACCESS } = process.env;
 
 app.use(ACCESS, UserAccountRoute)
 app.use(ACCESS, RoleAccessRoute)
@@ -61,6 +66,9 @@ app.use(ACCESS, ApplicationUpdateRoute)
 app.use(ACCESS, ApplicationDataRoute)
 app.use(ACCESS, AddAdditionalCoborrowerRoute)
 app.use(ACCESS, GetDataRoute)
+
+//Compresed
+app.use(ACCESS, GetRoutes)
 
 app.get('/test', (req, res) => {
     res.send('ANO NG GALING MO');
@@ -102,7 +110,7 @@ io.on('connection', (socket) => {
 })
 
 server.listen(() => {
-    console.log(`HTTP Server: Listening on port ${PORT}`)
+    console.log(`IO Server: Listening on port ${PORT}`)
 })
 
 /*let value = 0;

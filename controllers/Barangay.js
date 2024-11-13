@@ -27,7 +27,7 @@ export async function GetBarangay(req, res) {
 
 export async function GetMuniArea(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getMuniArea/${req.params.provinceCode}`)
+    await axios.get(`${API}/getMuniArea/${req.params.PROV}`)
         .then((result) => {
             res.json(result.data)
         })
