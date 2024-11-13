@@ -105,11 +105,11 @@ server.listen(() => {
     console.log(`HTTP Server: Listening on port ${PORT}`)
 })
 
-let value = 0;
+/*let value = 0;
 cron.schedule('* * * * *', () => {
     console.log('WORKING: ' + value);
     value += 1
-})
+})*/
 
 //const httpsServer = https.createServer({}, app) //creating https server with an empty ssl certificate object
 //httpsServer.listen(HTTPS_PORT, () => {
