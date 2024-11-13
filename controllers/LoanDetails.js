@@ -27,6 +27,8 @@ export async function GetLoanPurpose(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]', error);
+            console.log('FILE: LoanDetails');
+            console.log('/getLoanPurpose');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -44,6 +46,8 @@ export async function GetLoanConsultant(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]', error);
+            console.log('FILE: LoanDetails');
+            console.log('/getLoanConsultant');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');

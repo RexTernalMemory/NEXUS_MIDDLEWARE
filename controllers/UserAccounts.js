@@ -10,6 +10,8 @@ export async function Register(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/register');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -33,6 +35,8 @@ export async function UpdateUser(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/updateUser');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -56,6 +60,8 @@ export async function GetUsers(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/getUsers');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -79,6 +85,8 @@ export async function GetUserInfo(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/getUserInfo');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -102,6 +110,8 @@ export async function Login(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/login');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -125,6 +135,8 @@ export async function PasswordAttempt(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/passwordAttempt');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -138,7 +150,7 @@ export async function PasswordAttempt(req, res) {
         });
 }
 
-export async function VerfiedAccount(req, res) {
+export async function VerifiedAccount(req, res) {
     const { API } = process.env;
     await axios.post(`${API}/verifiedAccount`, req.body)
         .then((result) => {
@@ -147,7 +159,9 @@ export async function VerfiedAccount(req, res) {
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]');
+            console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/verifiedAccount');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -170,7 +184,9 @@ export async function ResendOTP(req, res) {
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]');
+            console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/resendOtp');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -193,7 +209,9 @@ export async function CancelOTP(req, res) {
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]');
+            console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/cancelOtp');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -217,6 +235,8 @@ export async function GetBrachNameList(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]', error);
+            console.log('FILE: UserAccount');
+            console.log('/getBrachNameList');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -234,6 +254,8 @@ export async function GetDepartmentList(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]', error);
+            console.log('FILE: UserAccount');
+            console.log('/getDepartmentList');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -251,6 +273,8 @@ export async function GetRoleList(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]', error);
+            console.log('FILE: UserAccount');
+            console.log('/getRoleList');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -267,7 +291,9 @@ export async function VerifyOtp(req, res) {
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]');
+            console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/verifyOtp');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -290,7 +316,9 @@ export async function ForgotPassword(req, res) {
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]');
+            console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/forgotPassword');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -313,7 +341,9 @@ export async function UnlockAccount(req, res) {
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]');
+            console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/unlockAccount');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -336,7 +366,9 @@ export async function ValidateURL(req, res) {
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]');
+            console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/validateURL');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -359,7 +391,9 @@ export async function CheckPassword(req, res) {
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]');
+            console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/checkPassword');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -382,7 +416,9 @@ export async function ResetPassword(req, res) {
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]');
+            console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/resetPassword');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -405,7 +441,9 @@ export async function SavePassword(req, res) {
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]');
+            console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/savePassword');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -428,7 +466,9 @@ export async function ReseterPassword(req, res) {
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]');
+            console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/resetPassword');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);

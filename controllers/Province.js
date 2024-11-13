@@ -10,6 +10,8 @@ export async function GetProvinceselection(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]', error);
+            console.log('FILE: Province');
+            console.log('/getProvinceselection');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');

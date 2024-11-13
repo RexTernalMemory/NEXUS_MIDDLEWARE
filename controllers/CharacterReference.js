@@ -10,6 +10,8 @@ export async function GetRelationship(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]');
+            console.log('FILE: CharacterRefrence');
+            console.log('/getRelationship');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -33,6 +35,8 @@ export async function GetCharacterRef(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]');
+            console.log('FILE: CharacterRefrence');
+            console.log('/getCharacterRef');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -56,6 +60,8 @@ export async function AddCharacterRef(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: CharacterRefrence');
+            console.log('/addCharacterRef');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -79,6 +85,8 @@ export async function EditCharacterRef(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
+            console.log('FILE: CharacterRefrence');
+            console.log('/editCharacterRef');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -94,14 +102,16 @@ export async function EditCharacterRef(req, res) {
 
 export async function DeleteCharacterRef(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/delete/${req.params.CharacterRefId}`)
+    await axios.post(`${API}/delete/${req.params.CharacterRefId}`)
         .then((result) => {
             res.json(result.data)
         })
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]');
+            console.log('[POST REQUEST]');
+            console.log('FILE: CharacterRefrence');
+            console.log('/delete');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);

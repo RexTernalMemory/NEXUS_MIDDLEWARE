@@ -10,6 +10,8 @@ export async function GetKaiser(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]', error);
+            console.log('FILE: KaiserChecker');
+            console.log('/getKaiser');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
