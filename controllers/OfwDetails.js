@@ -56,7 +56,7 @@ export async function GetIDtype(req, res) {
             res.json(error)
         });
 }
-
+/*
 export async function GetAgency(req, res) {
     const { API } = process.env;
     await axios.get(`${API}/OFWDetails/GetAgency`)
@@ -75,7 +75,7 @@ export async function GetAgency(req, res) {
             res.json(error)
         });
 }
-
+*/
 export async function GetSuffix(req, res) {
     const { API } = process.env;
     await axios.get(`${API}/OFWDetails/GetSuffix`)
