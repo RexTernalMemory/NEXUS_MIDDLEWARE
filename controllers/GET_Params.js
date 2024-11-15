@@ -21,10 +21,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'BY') {
@@ -44,10 +44,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'PE') {
@@ -67,10 +67,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'BL') {
@@ -90,10 +90,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'BH') {
@@ -113,10 +113,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'RP') {
@@ -136,10 +136,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'IS') {
@@ -159,10 +159,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'CL') {
@@ -182,10 +182,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'CE') {
@@ -205,10 +205,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'CT') {
@@ -228,10 +228,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'LT') {
@@ -251,10 +251,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'LP') {
@@ -274,10 +274,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'LC') {
@@ -297,10 +297,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'MA') {
@@ -320,10 +320,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'PT') {
@@ -343,10 +343,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'LR') {
@@ -366,10 +366,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'OCY') {
@@ -389,10 +389,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'OGI') {
@@ -412,10 +412,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'OGA') {
@@ -435,10 +435,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'OGS') {
@@ -458,10 +458,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'OCA') {
@@ -481,10 +481,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'OJC') {
@@ -504,10 +504,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'PS') {
@@ -527,10 +527,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else if (id === 'RR') {
@@ -550,10 +550,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
     else {
@@ -573,10 +573,10 @@ export async function GetDataParams(req, res) {
                 console.log('=========================================');
                 console.log('                                         ');
                 res.json({
-                    Code: error.code,
-                    Message: error.message,
-                    Status: error.status
-                })
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
             });
     }
 }

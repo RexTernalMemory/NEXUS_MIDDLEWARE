@@ -18,9 +18,9 @@ export async function GetRelationship(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -43,9 +43,9 @@ export async function GetCharacterRef(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -68,9 +68,9 @@ export async function AddCharacterRef(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -93,9 +93,9 @@ export async function EditCharacterRef(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -118,9 +118,9 @@ export async function DeleteCharacterRef(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }

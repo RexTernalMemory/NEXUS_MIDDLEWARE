@@ -1,18 +1,20 @@
 import axios from "axios";
 
-export async function GetListRelationship(req, res) {
+export async function GetDisbursementList(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getListRelationship`)
+    await axios.get(`${API}/getDisbursementList/${req.params.LAN}/${req.params.TYPE}`)
         .then((result) => {
             res.json(result.data)
         })
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]', error);
-            console.log('FILE: OfwDetails');
-            console.log('/getListRelationship');
-            console.log('ERROR:', error);
+            console.log('[GET REQUEST]');
+            console.log('FILE: Disbursement');
+            console.log('/getDisbursementList');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
             console.log('=========================================');
             console.log('                                         ');
             res.json({
@@ -23,19 +25,21 @@ export async function GetListRelationship(req, res) {
         });
 }
 
-export async function GetCountry(req, res) {
+export async function CreateDisbursement(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/OFWDetails/getCountry`)
+    await axios.post(`${API}/createDisbursement`, req.body)
         .then((result) => {
             res.json(result.data)
         })
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]', error);
-            console.log('FILE: OfwDetails');
-            console.log('/getCountry');
-            console.log('ERROR:', error);
+            console.log('[POST REQUEST]');
+            console.log('FILE: Batch');
+            console.log('/createDisbursement');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
             console.log('=========================================');
             console.log('                                         ');
             res.json({
@@ -46,19 +50,21 @@ export async function GetCountry(req, res) {
         });
 }
 
-export async function GetIDtype(req, res) {
+export async function UpdateDisbursement(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/OFWDetails/getIDtype`)
+    await axios.post(`${API}/updateDisbursement`, req.body)
         .then((result) => {
             res.json(result.data)
         })
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]', error);
-            console.log('FILE: OfwDetails');
-            console.log('/getIDtype');
-            console.log('ERROR:', error);
+            console.log('[POST REQUEST]');
+            console.log('FILE: Batch');
+            console.log('/updateDisbursement');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
             console.log('=========================================');
             console.log('                                         ');
             res.json({
@@ -69,19 +75,21 @@ export async function GetIDtype(req, res) {
         });
 }
 
-export async function GetAgency(req, res) {
+export async function DeleteDisbursement(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/OFWDetails/GetAgency`)
+    await axios.post(`${API}/deleteDisbursement/${req.params.ID}`,)
         .then((result) => {
             res.json(result.data)
         })
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]', error);
-            console.log('FILE: OfwDetails');
-            console.log('/GetAgency');
-            console.log('ERROR:', error);
+            console.log('[POST REQUEST]');
+            console.log('FILE: Batch');
+            console.log('/deleteDisbursement');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
             console.log('=========================================');
             console.log('                                         ');
             res.json({
@@ -92,19 +100,21 @@ export async function GetAgency(req, res) {
         });
 }
 
-export async function GetSuffix(req, res) {
+export async function UpdateStatDisbursement(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/OFWDetails/GetSuffix`)
+    await axios.post(`${API}/updateStatDisbursement/${req.params.ID}/${req.params.USER}/${req.params.STATUS}`,)
         .then((result) => {
             res.json(result.data)
         })
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]', error);
-            console.log('FILE: OfwDetails');
-            console.log('/GetSuffix');
-            console.log('ERROR:', error);
+            console.log('[POST REQUEST]');
+            console.log('FILE: Batch');
+            console.log('/updateStatDisbursement');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
             console.log('=========================================');
             console.log('                                         ');
             res.json({
@@ -115,65 +125,21 @@ export async function GetSuffix(req, res) {
         });
 }
 
-export async function GetCollectionArea(req, res) {
+export async function UpdateFileNameBatch(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/OFWDetails/getCollectionArea`)
+    await axios.post(`${API}/updateFileNameBatch/${req.params.ID}/${req.params.FILENAME}`,)
         .then((result) => {
             res.json(result.data)
         })
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]', error);
-            console.log('FILE: OfwDetails');
-            console.log('/getCollectionArea');
-            console.log('ERROR:', error);
-            console.log('=========================================');
-            console.log('                                         ');
-            res.json({
-                status: error.status,
-                message: error.message,
-                description: error.description
-            })
-        });
-}
-
-export async function GetJobCategory(req, res) {
-    const { API } = process.env;
-    await axios.get(`${API}/OFWDetails/getJobCategory`)
-        .then((result) => {
-            res.json(result.data)
-        })
-        .catch(error => {
-            console.log('                                         ');
-            console.log('=========================================');
-            console.log('[GET REQUEST]', error);
-            console.log('FILE: OfwDetails');
-            console.log('/getJobCategory');
-            console.log('ERROR:', error);
-            console.log('=========================================');
-            console.log('                                         ');
-            res.json({
-                status: error.status,
-                message: error.message,
-                description: error.description
-            })
-        });
-}
-
-export async function GetPosition(req, res) {
-    const { API } = process.env;
-    await axios.get(`${API}/OFWDetails/getPosition/${req.params.category}`)
-        .then((result) => {
-            res.json(result.data)
-        })
-        .catch(error => {
-            console.log('                                         ');
-            console.log('=========================================');
-            console.log('[GET REQUEST]', error);
-            console.log('FILE: OfwDetails');
-            console.log('/getPosition');
-            console.log('ERROR:', error);
+            console.log('[POST REQUEST]');
+            console.log('FILE: Batch');
+            console.log('/updateFileNameBatch');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
             console.log('=========================================');
             console.log('                                         ');
             res.json({

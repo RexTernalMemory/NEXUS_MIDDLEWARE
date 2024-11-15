@@ -15,7 +15,11 @@ export async function DefaultAccessList(req, res) {
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
-            res.json(error)
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
         });
 }
 
@@ -34,7 +38,11 @@ export async function CustomAccessList(req, res) {
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
-            res.json(error)
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
         });
 }
 
@@ -53,6 +61,10 @@ export async function UpdateRole(req, res) {
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
-            res.json(error)
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
         });
 }

@@ -15,7 +15,11 @@ export async function GetOtherLoanHistory(req, res) {
         console.log('ERROR:', error);
         console.log('=========================================');
         console.log('                                         ');
-        res.json(error)
+        res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
     });
 }
 
@@ -34,7 +38,11 @@ export async function AddLoanHistory(req, res) {
         console.log('ERROR:', error);
         console.log('=========================================');
         console.log('                                         ');
-        res.json(error)
+        res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
     });
 }
 
@@ -53,7 +61,11 @@ export async function EditOtherLoanHistory(req, res) {
         console.log('ERROR:', error);
         console.log('=========================================');
         console.log('                                         ');
-        res.json(error)
+        res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
     });
 }
 
@@ -72,7 +84,11 @@ export async function DeleteOtherLoanHistory(req, res) {
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
-            res.json(error)
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
         });
     
 }

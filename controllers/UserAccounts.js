@@ -18,9 +18,9 @@ export async function Register(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -43,9 +43,9 @@ export async function UpdateUser(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -68,9 +68,9 @@ export async function GetUsers(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -93,9 +93,9 @@ export async function GetUserInfo(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -118,9 +118,9 @@ export async function Login(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -143,9 +143,9 @@ export async function PasswordAttempt(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -168,9 +168,9 @@ export async function VerifiedAccount(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -193,9 +193,9 @@ export async function ResendOTP(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -218,9 +218,9 @@ export async function CancelOTP(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -300,9 +300,9 @@ export async function VerifyOtp(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -325,9 +325,9 @@ export async function ForgotPassword(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -350,9 +350,9 @@ export async function UnlockAccount(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -375,9 +375,9 @@ export async function ValidateURL(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -400,9 +400,9 @@ export async function CheckPassword(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -425,9 +425,9 @@ export async function ResetPassword(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -450,9 +450,9 @@ export async function SavePassword(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -475,9 +475,59 @@ export async function ReseterPassword(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
+        });
+}
+
+export async function CraList(req, res) {
+    const { API } = process.env;
+    await axios.get(`${API}/craList`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/craList');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
+        });
+}
+
+export async function CraAssign(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/craAssign`, req.body)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/craAssign');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }

@@ -5,7 +5,7 @@ import {
     Register, UpdateUser, GetUsers, GetUserInfo, Login, PasswordAttempt,
     VerifiedAccount, ResendOTP, CancelOTP, GetBrachNameList, GetDepartmentList,
     GetRoleList, VerifyOtp, ForgotPassword, UnlockAccount, ValidateURL, CheckPassword,
-    ResetPassword, SavePassword, ReseterPassword
+    ResetPassword, SavePassword, ReseterPassword, CraList, CraAssign
 } from '../controllers/UserAccounts.js'
 
 route.post('/register', Register)
@@ -28,5 +28,7 @@ route.post('/checkPassword/:id', CheckPassword)
 route.post('/user-management/resetPassword', ResetPassword)
 route.post('/savePassword', SavePassword)
 route.post('/resetPassword', ReseterPassword)
+route.get('/craList', CraList)
+route.post('/craAssign', CraAssign)
 
 export { route as UserAccountRoute }

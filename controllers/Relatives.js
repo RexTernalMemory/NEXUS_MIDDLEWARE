@@ -15,7 +15,11 @@ export async function GetRelativesRelationship(req, res) {
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
-            res.json(error)
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
         });
 }
 
@@ -34,7 +38,11 @@ export async function GetRelativesSuffix(req, res) {
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
-            res.json(error)
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
         });
 }
 
@@ -53,7 +61,11 @@ export async function GetRelatives(req, res) {
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
-            res.json(error)
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
         });
 }
 
@@ -72,7 +84,11 @@ export async function AddRelatives(req, res) {
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
-            res.json(error)
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
         });
 }
 
@@ -91,7 +107,11 @@ export async function EditRelatives(req, res) {
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
-            res.json(error)
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
         });
 }
 
@@ -110,6 +130,10 @@ export async function Relativedelete(req, res) {
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
-            res.json(error)
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
         });
 }

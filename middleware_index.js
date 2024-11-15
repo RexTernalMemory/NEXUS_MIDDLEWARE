@@ -30,6 +30,15 @@ import { ApplicationDataRoute } from './routes/ApplicationDataRoute.js'
 import { AddAdditionalCoborrowerRoute } from './routes/AdditionalCoborrowerRoute.js'
 import { GetDataRoute } from './routes/GetDataRoutes.js'
 import { GetRoutes } from './routes/GetRoutes.js'
+import { BatchRoute } from './routes/BatchRoute.js'
+import { BankRoute } from './routes/BankRoute.js'
+import { DisbursementRoute } from './routes/DisbursementRoute.js'
+import { EmploymentHistoryRoute } from './routes/EmploymentHistoryRoute.js'
+import { LoanApprovalRoute } from './routes/LoanApprovalRoute.js'
+import { OwnedAssetsRoute } from './routes/OwnedAssetsRoute.js'
+import { OwnedPropertiesRoute } from './routes/OwnedPropertiesRoute.js'
+import { SofiaRoute } from './routes/SofiaRoute.js'
+import { VesselFinderRoute } from './routes/VesselFinderRoute.js'
 
 dotenv.config()
 const app = express()
@@ -47,7 +56,7 @@ app.use(cors({
         "Access-Control-Allow-Credentials",
     ],
 }))
-const { PORT,HTTPS_PORT, ACCESS } = process.env;
+const { PORT, HTTPS_PORT, ACCESS } = process.env;
 
 app.use(ACCESS, UserAccountRoute)
 app.use(ACCESS, RoleAccessRoute)
@@ -66,6 +75,15 @@ app.use(ACCESS, ApplicationUpdateRoute)
 app.use(ACCESS, ApplicationDataRoute)
 app.use(ACCESS, AddAdditionalCoborrowerRoute)
 app.use(ACCESS, GetDataRoute)
+app.use(ACCESS, BatchRoute)
+app.use(ACCESS, BankRoute)
+app.use(ACCESS, DisbursementRoute)
+app.use(ACCESS, EmploymentHistoryRoute)
+app.use(ACCESS, LoanApprovalRoute)
+app.use(ACCESS, OwnedAssetsRoute)
+app.use(ACCESS, OwnedPropertiesRoute)
+app.use(ACCESS, SofiaRoute)
+app.use(ACCESS, VesselFinderRoute)
 
 //Compresed
 app.use(ACCESS, GetRoutes)

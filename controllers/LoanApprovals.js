@@ -1,20 +1,18 @@
 import axios from "axios";
 
-export async function VerifyUser(req, res) {
+export async function GetApproval(res) {
     const { API } = process.env;
-    await axios.post(`${API}/verify/user/${req.params.token}`)
+    await axios.get(`${API}/getApproval/${req.params.LAI}`)
         .then((result) => {
             res.json(result.data)
         })
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[POST REQUEST]');
-            console.log('FILE: VerifyUser');
-            console.log('/verify/user');
-            console.log('Code:', error.code);
-            console.log('Message:', error.message);
-            console.log('Status:', error.status);
+            console.log('[GET REQUEST]', error);
+            console.log('FILE: LoanApprovals');
+            console.log('/getApproval');
+            console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
             res.json({

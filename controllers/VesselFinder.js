@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export async function VerifyUser(req, res) {
+export async function Shipvessel_Details(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/verify/user/${req.params.token}`)
+    await axios.post(`${API}/shipvessel_Details/${req.params.IMO}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -10,8 +10,8 @@ export async function VerifyUser(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
-            console.log('FILE: VerifyUser');
-            console.log('/verify/user');
+            console.log('FILE: VesselFinder');
+            console.log('/shipvessel_Details');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);

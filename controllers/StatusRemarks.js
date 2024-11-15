@@ -18,9 +18,9 @@ export async function GetStatusList(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -43,9 +43,9 @@ export async function GetRemarks(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -68,9 +68,9 @@ export async function UpdateApplicationStatus(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -93,9 +93,59 @@ export async function UpdateLackOfDocs(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
+        });
+}
+
+export async function UpdateCheckListForApproval(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/updateCheckListForApproval`, req.body)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[POST REQUEST]');
+            console.log('FILE: StatusRemarks');
+            console.log('/updateCheckListForApproval');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
+        });
+}
+
+export async function UpdateDepartDate(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/updateDepartDate`, req.body)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[POST REQUEST]');
+            console.log('FILE: StatusRemarks');
+            console.log('/updateDepartDate');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }

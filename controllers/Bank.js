@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export async function GetAgency(req, res) {
+export async function GetPurposeList(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getAgency`)
+    await axios.get(`${API}/getPurposeList`)
         .then((result) => {
             res.json(result.data)
         })
@@ -10,8 +10,8 @@ export async function GetAgency(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]');
-            console.log('FILE: Agency');
-            console.log('/getAgency');
+            console.log('FILE: Bank');
+            console.log('/getPurposeList');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -25,43 +25,18 @@ export async function GetAgency(req, res) {
         });
 }
 
-export async function AddAgency(req, res) {
+export async function GetPaymentList(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/addAgency`, req.body)
+    await axios.get(`${API}/getPaymentList`)
         .then((result) => {
             res.json(result.data)
         })
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[POST REQUEST]');
-            console.log('FILE: Agency');
-            console.log('/addAgency');
-            console.log('Code:', error.code);
-            console.log('Message:', error.message);
-            console.log('Status:', error.status);
-            console.log('=========================================');
-            console.log('                                         ');
-            res.json({
-                status: error.status,
-                message: error.message,
-                description: error.description
-            })
-        });
-}
-
-export async function EditAgency(req, res) {
-    const { API } = process.env;
-    await axios.post(`${API}/editAgency`, req.body)
-        .then((result) => {
-            res.json(result.data)
-        })
-        .catch(error => {
-            console.log('                                         ');
-            console.log('=========================================');
-            console.log('[POST REQUEST]');
-            console.log('FILE: Agency');
-            console.log('/editAgency');
+            console.log('[GET REQUEST]');
+            console.log('FILE: Bank');
+            console.log('/getPaymentList');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);

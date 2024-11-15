@@ -19,9 +19,9 @@ export async function UpdateDetails(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -44,9 +44,9 @@ export async function UpdateAppLCDetails(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -69,9 +69,9 @@ export async function UpdateAppDetails(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }

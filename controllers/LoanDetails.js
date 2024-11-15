@@ -13,7 +13,11 @@ export async function GetListLoanProduct(req, res) {
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
-            res.json(error)
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
         });
 }
 
@@ -32,7 +36,11 @@ export async function GetLoanPurpose(req, res) {
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
-            res.json(error)
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
         });
 }
 
@@ -51,6 +59,10 @@ export async function GetLoanConsultant(req, res) {
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
-            res.json(error)
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
         });
 }

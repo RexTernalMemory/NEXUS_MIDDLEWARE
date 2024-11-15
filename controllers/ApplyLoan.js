@@ -18,9 +18,9 @@ export async function AddLCClient(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }
@@ -43,9 +43,9 @@ export async function AddDirectClient(req, res) {
             console.log('=========================================');
             console.log('                                         ');
             res.json({
-                Code: error.code,
-                Message: error.message,
-                Status: error.status
+                status: error.status,
+                message: error.message,
+                description: error.description
             })
         });
 }

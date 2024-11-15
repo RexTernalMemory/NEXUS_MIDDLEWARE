@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export async function GetListRelationship(req, res) {
+export async function GetBatchList(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getListRelationship`)
+    await axios.get(`${API}/getBatchList/${req.params.USR}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -10,8 +10,8 @@ export async function GetListRelationship(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]', error);
-            console.log('FILE: OfwDetails');
-            console.log('/getListRelationship');
+            console.log('FILE: Batch');
+            console.log('/getBatchList');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -23,9 +23,9 @@ export async function GetListRelationship(req, res) {
         });
 }
 
-export async function GetCountry(req, res) {
+export async function AvailableList(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/OFWDetails/getCountry`)
+    await axios.get(`${API}/availableList`)
         .then((result) => {
             res.json(result.data)
         })
@@ -33,8 +33,8 @@ export async function GetCountry(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]', error);
-            console.log('FILE: OfwDetails');
-            console.log('/getCountry');
+            console.log('FILE: Batch');
+            console.log('/availableList');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -46,9 +46,59 @@ export async function GetCountry(req, res) {
         });
 }
 
-export async function GetIDtype(req, res) {
+export async function CreateBatchList(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/OFWDetails/getIDtype`)
+    await axios.post(`${API}/createBatchList`, req.body)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[POST REQUEST]');
+            console.log('FILE: Batch');
+            console.log('/createBatchList');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
+        });
+}
+
+export async function SetBatchList(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/setBatchList/${req.params.BID}/${req.params.MU}/${req.params.Id}`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[POST REQUEST]');
+            console.log('FILE: Batch');
+            console.log('/setBatchList');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
+        });
+}
+
+export async function GetBatchedDisbursement(req, res) {
+    const { API } = process.env;
+    await axios.get(`${API}/getBatchedDisbursement/${req.params.BID}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -56,8 +106,8 @@ export async function GetIDtype(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]', error);
-            console.log('FILE: OfwDetails');
-            console.log('/getIDtype');
+            console.log('FILE: Batch');
+            console.log('/getBatchedDisbursement');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
@@ -69,19 +119,21 @@ export async function GetIDtype(req, res) {
         });
 }
 
-export async function GetAgency(req, res) {
+export async function RemoveFromBatchList(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/OFWDetails/GetAgency`)
+    await axios.post(`${API}/removeFromBatchList`, req.body)
         .then((result) => {
             res.json(result.data)
         })
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]', error);
-            console.log('FILE: OfwDetails');
-            console.log('/GetAgency');
-            console.log('ERROR:', error);
+            console.log('[POST REQUEST]');
+            console.log('FILE: Batch');
+            console.log('/removeFromBatchList');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
             console.log('=========================================');
             console.log('                                         ');
             res.json({
@@ -92,19 +144,21 @@ export async function GetAgency(req, res) {
         });
 }
 
-export async function GetSuffix(req, res) {
+export async function UpdateBatchDetails(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/OFWDetails/GetSuffix`)
+    await axios.post(`${API}/updateBatchDetails`, req.body)
         .then((result) => {
             res.json(result.data)
         })
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]', error);
-            console.log('FILE: OfwDetails');
-            console.log('/GetSuffix');
-            console.log('ERROR:', error);
+            console.log('[POST REQUEST]');
+            console.log('FILE: Batch');
+            console.log('/updateBatchDetails');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
             console.log('=========================================');
             console.log('                                         ');
             res.json({
@@ -115,65 +169,21 @@ export async function GetSuffix(req, res) {
         });
 }
 
-export async function GetCollectionArea(req, res) {
+export async function AdditionalDisbursement(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/OFWDetails/getCollectionArea`)
+    await axios.post(`${API}/additionalDisbursement`, req.body)
         .then((result) => {
             res.json(result.data)
         })
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]', error);
-            console.log('FILE: OfwDetails');
-            console.log('/getCollectionArea');
-            console.log('ERROR:', error);
-            console.log('=========================================');
-            console.log('                                         ');
-            res.json({
-                status: error.status,
-                message: error.message,
-                description: error.description
-            })
-        });
-}
-
-export async function GetJobCategory(req, res) {
-    const { API } = process.env;
-    await axios.get(`${API}/OFWDetails/getJobCategory`)
-        .then((result) => {
-            res.json(result.data)
-        })
-        .catch(error => {
-            console.log('                                         ');
-            console.log('=========================================');
-            console.log('[GET REQUEST]', error);
-            console.log('FILE: OfwDetails');
-            console.log('/getJobCategory');
-            console.log('ERROR:', error);
-            console.log('=========================================');
-            console.log('                                         ');
-            res.json({
-                status: error.status,
-                message: error.message,
-                description: error.description
-            })
-        });
-}
-
-export async function GetPosition(req, res) {
-    const { API } = process.env;
-    await axios.get(`${API}/OFWDetails/getPosition/${req.params.category}`)
-        .then((result) => {
-            res.json(result.data)
-        })
-        .catch(error => {
-            console.log('                                         ');
-            console.log('=========================================');
-            console.log('[GET REQUEST]', error);
-            console.log('FILE: OfwDetails');
-            console.log('/getPosition');
-            console.log('ERROR:', error);
+            console.log('[POST REQUEST]');
+            console.log('FILE: Batch');
+            console.log('/AdditionalDisbursement');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
             console.log('=========================================');
             console.log('                                         ');
             res.json({

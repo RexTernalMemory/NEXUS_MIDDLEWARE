@@ -15,7 +15,11 @@ export async function GetBranchList(res) {
         console.log('ERROR:', error);
         console.log('=========================================');
         console.log('                                         ');
-        res.json(error)
+        res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
     });
 }
 
@@ -34,7 +38,11 @@ export async function GetBranch(res) {
         console.log('ERROR:', error);
         console.log('=========================================');
         console.log('                                         ');
-        res.json(error)
+        res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
     });
 }
 
@@ -53,7 +61,11 @@ export async function AddBranch(req, res) {
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
-            res.json(error)
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
         });
 }
 
@@ -72,7 +84,11 @@ export async function UpdateBranch(req, res) {
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
-            res.json(error)
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
         });
 }
 
