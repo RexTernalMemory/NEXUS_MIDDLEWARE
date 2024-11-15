@@ -5,7 +5,7 @@ import { GetTrackLoan, GetAppDataList, GetClientDataList, CheckLoan, GetDuplicat
 
 route.post('/getTrackLoan', GetTrackLoan)
 route.get('/getAppDataList/:USID/:TILE', GetAppDataList)
-route.get('/getClientDataList/:LAI', GetClientDataList)
+route.get('/getClientDataList/:First', GetClientDataList)
 route.post('/checkLoan', CheckLoan)
 route.get('/getDuplicateLoans/:FN/:LN/:LAI', GetDuplicateLoans)
 route.get('/tileCount', GetTileCont)

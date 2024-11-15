@@ -27,7 +27,7 @@ export async function GetRelationship(req, res) {
 
 export async function GetCharacterRef(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getCharacterRef/${req.params.CI}`)
+    await axios.get(`${API}/getCharacterRef/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -102,7 +102,7 @@ export async function EditCharacterRef(req, res) {
 
 export async function DeleteCharacterRef(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/delete/${req.params.CharacterRefId}`)
+    await axios.post(`${API}/delete/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })

@@ -39,6 +39,7 @@ import { OwnedAssetsRoute } from './routes/OwnedAssetsRoute.js'
 import { OwnedPropertiesRoute } from './routes/OwnedPropertiesRoute.js'
 import { SofiaRoute } from './routes/SofiaRoute.js'
 import { VesselFinderRoute } from './routes/VesselFinderRoute.js'
+import { PostRoutes } from './routes/PostRoutes.js'
 
 dotenv.config()
 const app = express()
@@ -85,8 +86,10 @@ app.use(ACCESS, OwnedPropertiesRoute)
 app.use(ACCESS, SofiaRoute)
 app.use(ACCESS, VesselFinderRoute)
 
-//Compresed
+//Compresed Routes
 app.use(ACCESS, GetRoutes)
+app.use(ACCESS, PostRoutes)
+
 
 app.get('/test', (req, res) => {
     res.send('ANO NG GALING MO');

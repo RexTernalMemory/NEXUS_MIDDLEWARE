@@ -77,7 +77,7 @@ export async function GetUsers(req, res) {
 
 export async function GetUserInfo(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getUserInfo/${req.params.id}`)
+    await axios.get(`${API}/getUserInfo/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -177,7 +177,7 @@ export async function VerifiedAccount(req, res) {
 
 export async function ResendOTP(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/resendOtp/${req.params.Username}`)
+    await axios.post(`${API}/resendOtp/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -202,7 +202,7 @@ export async function ResendOTP(req, res) {
 
 export async function CancelOTP(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/cancelOtp/${req.params.Username}`)
+    await axios.post(`${API}/cancelOtp/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -265,7 +265,7 @@ export async function GetDepartmentList(req, res) {
 
 export async function GetRoleList(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getRoleList/${req.params.id}`)
+    await axios.get(`${API}/getRoleList/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -309,7 +309,7 @@ export async function VerifyOtp(req, res) {
 
 export async function ForgotPassword(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/forgotPassword/${req.params.Username}`)
+    await axios.post(`${API}/forgotPassword/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -334,7 +334,7 @@ export async function ForgotPassword(req, res) {
 
 export async function UnlockAccount(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/unlockAccount/${req.params.Username}`)
+    await axios.post(`${API}/unlockAccount/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -384,7 +384,7 @@ export async function ValidateURL(req, res) {
 
 export async function CheckPassword(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/checkPassword/${req.params.id}`)
+    await axios.post(`${API}/checkPassword/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -519,6 +519,31 @@ export async function CraAssign(req, res) {
             console.log('[POST REQUEST]');
             console.log('FILE: UserAccount');
             console.log('/craAssign');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
+        });
+}
+
+export async function ListOfAccount(req, res) {
+    const { API } = process.env;
+    await axios.get(`${API}/listOfAccount`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[POST REQUEST]');
+            console.log('FILE: UserAccount');
+            console.log('/listOfAccount');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);

@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export async function GetOwnedProperties(res) {
+export async function GetOwnedProperties(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getOwnedProperties/${req.params.LAI}`)
+    await axios.get(`${API}/getOwnedProperties/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -75,7 +75,7 @@ export async function EditOwnedProperties(req, res) {
 
 export async function DeleteOwnedProperties(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/DeleteOwnedProperties/${req.params.Id}`)
+    await axios.post(`${API}/DeleteOwnedProperties/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function GetStatusList(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getStatusList/${req.params.USID}/${req.params.LAI}`)
+    await axios.get(`${API}/getStatusList/${req.params.First}/${req.params.Second}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -27,7 +27,7 @@ export async function GetStatusList(req, res) {
 
 export async function GetRemarks(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getRemarks/${req.params.LAI}`)
+    await axios.get(`${API}/getRemarks/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -77,7 +77,7 @@ export async function UpdateApplicationStatus(req, res) {
 
 export async function UpdateLackOfDocs(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/UpdateLackOfDocs/${req.params.LAI}/${req.params.USER}`)
+    await axios.post(`${API}/UpdateLackOfDocs/${req.params.First}/${req.params.Second}`)
         .then((result) => {
             res.json(result.data)
         })

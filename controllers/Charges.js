@@ -1,20 +1,18 @@
 import axios from "axios";
 
-export async function GetPurposeList(req, res) {
+export async function GetChargerLPA(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getPurposeList`)
+    await axios.get(`${API}/getChargesLPA/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]');
-            console.log('FILE: Bank');
-            console.log('/getPurposeList');
-            console.log('Code:', error.code);
-            console.log('Message:', error.message);
-            console.log('Status:', error.status);
+            console.log('[GET REQUEST]', error);
+            console.log('FILE: Charges');
+            console.log('/getChargesLPA');
+            console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
             res.json({
@@ -25,21 +23,19 @@ export async function GetPurposeList(req, res) {
         });
 }
 
-export async function GetPaymentType(req, res) {
+export async function AddCharges(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getPaymentType`)
+    await axios.get(`${API}/addCharges`, req.body)
         .then((result) => {
             res.json(result.data)
         })
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[GET REQUEST]');
-            console.log('FILE: Bank');
-            console.log('/getPaymentType');
-            console.log('Code:', error.code);
-            console.log('Message:', error.message);
-            console.log('Status:', error.status);
+            console.log('[POST REQUEST]', error);
+            console.log('FILE: Charges');
+            console.log('/addCharges');
+            console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');
             res.json({

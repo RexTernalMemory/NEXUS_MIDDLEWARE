@@ -48,7 +48,7 @@ export async function GetRelativesSuffix(req, res) {
 
 export async function GetRelatives(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getRelatives/${req.params.BorrowerId}`)
+    await axios.get(`${API}/getRelatives/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -117,7 +117,7 @@ export async function EditRelatives(req, res) {
 
 export async function Relativedelete(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/Relativedelete/${req.params.Code}`)
+    await axios.post(`${API}/Relativedelete/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })

@@ -27,7 +27,7 @@ export async function AddAdditionalCoborrower(req, res) {
 
 export async function AdditionalCoborrowerdelete(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/AdditionalCoborrowerdelete/${req.params.LID}`)
+    await axios.post(`${API}/AdditionalCoborrowerdelete/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function GetNDI(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getNDI/${req.params.QTY}`)
+    await axios.get(`${API}/getNDI/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -27,7 +27,7 @@ export async function GetNDI(req, res) {
 
 export async function AddNDISelection(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/addNDISelection/${req.params.QTY}/${raq.params.NAME}/${req.params.USR}`)
+    await axios.post(`${API}/addNDISelection/${req.params.First}/${raq.params.Second}/${req.params.Third}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -50,7 +50,7 @@ export async function AddNDISelection(req, res) {
 
 export async function GetNDIData(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getNDIData/${req.params.loanApp}/${req.params.borrow}/${req.params.type}/${req.params.user}/${req.params.date}`)
+    await axios.get(`${API}/getNDIData/${req.params.First}/${req.params.Second}/${req.params.Third}/${req.params.Fourth}/${req.params.Fifth}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -75,7 +75,7 @@ export async function GetNDIData(req, res) {
 
 export async function UpdateNDI(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/updateNDI`)
+    await axios.post(`${API}/updateNDI`,req.body)
         .then((result) => {
             res.json(result.data)
         })
@@ -98,7 +98,7 @@ export async function UpdateNDI(req, res) {
 
 export async function DeleteNDI(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/deleteNDI`)
+    await axios.post(`${API}/deleteNDI`, req.body)
         .then((result) => {
             res.json(result.data)
         })

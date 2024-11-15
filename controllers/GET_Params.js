@@ -3,7 +3,7 @@ import axios from "axios";
 export async function GetDataParams(req, res) {
     const { API } = process.env;
     let id = req.params.id
-
+/*
     if (id === 'AY') {
         await axios.get(`${API}/getAgency`)
             .then((result) => {
@@ -27,7 +27,7 @@ export async function GetDataParams(req, res) {
             })
             });
     }
-    else if (id === 'BY') {
+    else */if (id === 'BY') {
         await axios.get(`${API}/getBarangay`)
             .then((result) => {
                 res.json(result.data)

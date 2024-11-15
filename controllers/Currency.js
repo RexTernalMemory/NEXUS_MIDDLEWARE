@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export async function GetDisbursementList(req, res) {
+export async function GetCurrencyTable(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getDisbursementList/${req.params.First}/${req.params.Second}`)
+    await axios.get(`${API}/getCurrencyTable`)
         .then((result) => {
             res.json(result.data)
         })
@@ -10,8 +10,8 @@ export async function GetDisbursementList(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[GET REQUEST]');
-            console.log('FILE: Disbursement');
-            console.log('/getDisbursementList');
+            console.log('FILE: Currency');
+            console.log('/getCurrencyTable');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -25,18 +25,18 @@ export async function GetDisbursementList(req, res) {
         });
 }
 
-export async function CreateDisbursement(req, res) {
+export async function GetCurrencyList(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/createDisbursement`, req.body)
+    await axios.get(`${API}/getCurrencyList`)
         .then((result) => {
             res.json(result.data)
         })
         .catch(error => {
             console.log('                                         ');
             console.log('=========================================');
-            console.log('[POST REQUEST]');
-            console.log('FILE: Batch');
-            console.log('/createDisbursement');
+            console.log('[GET REQUEST]');
+            console.log('FILE: Currency');
+            console.log('/getCurrencyList');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -50,9 +50,9 @@ export async function CreateDisbursement(req, res) {
         });
 }
 
-export async function UpdateDisbursement(req, res) {
+export async function DelCurrency(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/updateDisbursement`, req.body)
+    await axios.post(`${API}/delCurrency/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -60,8 +60,8 @@ export async function UpdateDisbursement(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
-            console.log('FILE: Batch');
-            console.log('/updateDisbursement');
+            console.log('FILE: Currency');
+            console.log('/delCurrency');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -75,9 +75,9 @@ export async function UpdateDisbursement(req, res) {
         });
 }
 
-export async function DeleteDisbursement(req, res) {
+export async function AddCurrency(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/deleteDisbursement/${req.params.First}`,)
+    await axios.post(`${API}/addCurrency`,req.body)
         .then((result) => {
             res.json(result.data)
         })
@@ -85,8 +85,8 @@ export async function DeleteDisbursement(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
-            console.log('FILE: Batch');
-            console.log('/deleteDisbursement');
+            console.log('FILE: Currency');
+            console.log('/addCurrency');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);
@@ -100,9 +100,9 @@ export async function DeleteDisbursement(req, res) {
         });
 }
 
-export async function UpdateStatDisbursement(req, res) {
+export async function EditCurrency(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/updateStatDisbursement/${req.params.First}/${req.params.Second}/${req.params.Third}`,)
+    await axios.post(`${API}/editCurrency`,req.body)
         .then((result) => {
             res.json(result.data)
         })
@@ -110,33 +110,8 @@ export async function UpdateStatDisbursement(req, res) {
             console.log('                                         ');
             console.log('=========================================');
             console.log('[POST REQUEST]');
-            console.log('FILE: Batch');
-            console.log('/updateStatDisbursement');
-            console.log('Code:', error.code);
-            console.log('Message:', error.message);
-            console.log('Status:', error.status);
-            console.log('=========================================');
-            console.log('                                         ');
-            res.json({
-                status: error.status,
-                message: error.message,
-                description: error.description
-            })
-        });
-}
-
-export async function UpdateFileNameBatch(req, res) {
-    const { API } = process.env;
-    await axios.post(`${API}/updateFileNameBatch/${req.params.First}/${req.params.Second}`,)
-        .then((result) => {
-            res.json(result.data)
-        })
-        .catch(error => {
-            console.log('                                         ');
-            console.log('=========================================');
-            console.log('[POST REQUEST]');
-            console.log('FILE: Batch');
-            console.log('/updateFileNameBatch');
+            console.log('FILE: Currency');
+            console.log('/editCurrency');
             console.log('Code:', error.code);
             console.log('Message:', error.message);
             console.log('Status:', error.status);

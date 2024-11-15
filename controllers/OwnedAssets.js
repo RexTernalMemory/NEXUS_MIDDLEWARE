@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export async function GetOwnedAssets(res) {
+export async function GetOwnedAssets(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getOwnedAssets/${req.params.LAI}`)
+    await axios.get(`${API}/getOwnedAssets/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -75,7 +75,7 @@ export async function EditOwnedAsset(req, res) {
 
 export async function DeleteOwnedAssets(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/DeleteOwnedAssets/${req.params.Id}`)
+    await axios.post(`${API}/DeleteOwnedAssets/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })

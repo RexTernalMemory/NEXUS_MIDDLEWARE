@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function Shipvessel_Details(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/shipvessel_Details/${req.params.IMO}`)
+    await axios.get(`${API}/shipvessel_Details/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })

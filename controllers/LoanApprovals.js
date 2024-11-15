@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export async function GetApproval(res) {
+export async function GetApproval(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getApproval/${req.params.LAI}`)
+    await axios.get(`${API}/getApproval/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })

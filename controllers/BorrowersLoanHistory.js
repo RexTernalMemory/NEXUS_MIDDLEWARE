@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function GetOtherLoanHistory(req, res) {
     const {API} = process.env;
-    await axios.get(`${API}/getOtherLoanHistory/${req.params.LAI}`)
+    await axios.get(`${API}/getOtherLoanHistory/${req.params.First}`)
     .then((result) => {
         res.json(result.data)
     })
@@ -71,7 +71,7 @@ export async function EditOtherLoanHistory(req, res) {
 
 export async function DeleteOtherLoanHistory(req, res) {
     const {API} = process.env;
-    await axios.post(`${API}/DeleteOtherLoanHistory/${req.params.Id}`)
+    await axios.post(`${API}/DeleteOtherLoanHistory/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })

@@ -27,7 +27,7 @@ export async function GetTrackLoan(req, res) {
 
 export async function GetAppDataList(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getAppDataList/${req.params.USID}/${req.params.TILE}`)
+    await axios.get(`${API}/getAppDataList/${req.params.First}/${req.params.Second}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -52,7 +52,7 @@ export async function GetAppDataList(req, res) {
 
 export async function GetClientDataList(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getClientDataList/${req.params.LAI}`)
+    await axios.get(`${API}/getClientDataList/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -102,7 +102,7 @@ export async function CheckLoan(req, res) {
 
 export async function GetDuplicateLoans(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getDuplicateLoans/${req.params.FN}/${req.params.LN}/${req.params.LAI}`)
+    await axios.get(`${API}/getDuplicateLoans/${req.params.First}/${req.params.Second}/${req.params.Third}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -147,5 +147,24 @@ export async function GetTileCont(req, res) {
                 message: error.message,
                 description: error.description
             })
+        });
+}
+
+export async function TileCount(req, res) {
+    const { API } = process.env;
+    await axios.get(`${API}/tileCount`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]', error);
+            console.log('FILE: TileCount');
+            console.log('/tileCount');
+            console.log('ERROR:', error);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json(error)
         });
 }

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function VerifyUser(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/verify/user/${req.params.token}`)
+    await axios.post(`${API}/verify/user/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })

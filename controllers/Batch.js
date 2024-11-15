@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function GetBatchList(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getBatchList/${req.params.USR}`)
+    await axios.get(`${API}/getBatchList/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -73,7 +73,7 @@ export async function CreateBatchList(req, res) {
 
 export async function SetBatchList(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/setBatchList/${req.params.BID}/${req.params.MU}/${req.params.Id}`)
+    await axios.post(`${API}/setBatchList/${req.params.First}/${req.params.Second}/${req.params.Third}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -98,7 +98,7 @@ export async function SetBatchList(req, res) {
 
 export async function GetBatchedDisbursement(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getBatchedDisbursement/${req.params.BID}`)
+    await axios.get(`${API}/getBatchedDisbursement/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function GetEmploymentHistory(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getEmploymentHistory/${req.params.LAI}`)
+    await axios.get(`${API}/getEmploymentHistory/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -77,7 +77,7 @@ export async function AddEmploymentHistory(req, res) {
 
 export async function EmploymentHistory(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/EmploymentHistory/${req.params.Id}`)
+    await axios.post(`${API}/EmploymentHistory/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -102,7 +102,7 @@ export async function EmploymentHistory(req, res) {
 
 export async function DeleteEmploymentHistory(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/DeleteEmploymentHistory/${req.params.Id}`)
+    await axios.post(`${API}/DeleteEmploymentHistory/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })

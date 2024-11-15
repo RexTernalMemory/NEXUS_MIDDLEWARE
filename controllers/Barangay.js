@@ -27,7 +27,7 @@ export async function GetBarangay(req, res) {
 
 export async function GetMuniArea(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getMuniArea/${req.params.PROV}`)
+    await axios.get(`${API}/getMuniArea/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
@@ -52,7 +52,7 @@ export async function GetMuniArea(req, res) {
 
 export async function GetBarangayList(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getbarangaylist/${req.params.MuniCode}`)
+    await axios.get(`${API}/getbarangaylist/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
