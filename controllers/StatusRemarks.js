@@ -149,3 +149,28 @@ export async function UpdateDepartDate(req, res) {
             })
         });
 }
+
+export async function GetPNNumber(req, res) {
+    const { API } = process.env;
+    await axios.post(`${API}/getPNNumber`, req.body)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[POST REQUEST]');
+            console.log('FILE: StatusRemarks');
+            console.log('/getPNNumber');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
+        });
+}

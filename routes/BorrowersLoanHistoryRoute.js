@@ -1,6 +1,6 @@
 import express from "express";
 const route = express.Router()
-import { GetOtherLoanHistory, AddLoanHistory, EditOtherLoanHistory,DeleteOtherLoanHistory } from "../controllers/BorrowersLoanHistory";
+import { GetOtherLoanHistory, AddLoanHistory, EditOtherLoanHistory,DeleteOtherLoanHistory } from "../controllers/BorrowersLoanHistory.js";
 
 route.get('/getOtherLoanHistory/:LAI', GetOtherLoanHistory)
 route.post('/addLoanHistory', AddLoanHistory)

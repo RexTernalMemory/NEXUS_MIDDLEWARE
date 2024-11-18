@@ -1,6 +1,6 @@
 import express from "express";
 const route =express.Router()
-import { GetBranchList, GetBranch, AddBranch, UpdateBranch } from "../controllers/Branch";
+import { GetBranchList, GetBranch, AddBranch, UpdateBranch } from "../controllers/Branch.js";
 
 route.get('/getBranchList', GetBranchList)
 route.get('/getBranch', GetBranch)

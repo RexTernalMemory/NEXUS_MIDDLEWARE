@@ -12,6 +12,7 @@ import https from 'https'
 import os from 'os'
 import dns from 'dns'
 
+import { AgencyRoute } from './routes/AgencyRoute.js'
 import { UserAccountRoute } from './routes/UserAccountRoutes.js'
 import { RoleAccessRoute } from './routes/RoleAccessRoutes.js'
 import { RelativesRoute } from './routes/RelativesRoutes.js'
@@ -40,6 +41,11 @@ import { OwnedPropertiesRoute } from './routes/OwnedPropertiesRoute.js'
 import { SofiaRoute } from './routes/SofiaRoute.js'
 import { VesselFinderRoute } from './routes/VesselFinderRoute.js'
 import { PostRoutes } from './routes/PostRoutes.js'
+import { StatusRemarksRoute } from './routes/StatusRemarksRoute.js'
+import { BorrowersLoanHistoryRoute } from './routes/BorrowersLoanHistoryRoute.js'
+import { BranchRoute } from './routes/BranchRoute.js'
+import { NDIRoute } from './routes/NDIRoute.js'
+import { VerifyRoute } from './routes/VerifyRoute.js'
 
 dotenv.config()
 const app = express()
@@ -57,7 +63,7 @@ app.use(cors({
         "Access-Control-Allow-Credentials",
     ],
 }))
-const { PORT, HTTPS_PORT, ACCESS } = process.env;
+const { PORT, ACCESS } = process.env;
 
 app.use(ACCESS, UserAccountRoute)
 app.use(ACCESS, RoleAccessRoute)
@@ -85,6 +91,12 @@ app.use(ACCESS, OwnedAssetsRoute)
 app.use(ACCESS, OwnedPropertiesRoute)
 app.use(ACCESS, SofiaRoute)
 app.use(ACCESS, VesselFinderRoute)
+app.use(ACCESS, StatusRemarksRoute)
+app.use(ACCESS, AgencyRoute)
+app.use(ACCESS, BorrowersLoanHistoryRoute)
+app.use(ACCESS, BranchRoute)
+app.use(ACCESS, NDIRoute)
+app.use(ACCESS, VerifyRoute)
 
 //Compresed Routes
 app.use(ACCESS, GetRoutes)
