@@ -26,6 +26,7 @@ import { GetOwnedAssets } from '../controllers/OwnedAssets.js';
 import { GetOwnedProperties } from '../controllers/OwnedProperties.js';
 import { Shipvessel_Details } from '../controllers/VesselFinder.js';
 import { GetChargerLPA } from '../controllers/Charges.js';
+import { GetWildSearch } from '../controllers/WildSearch.js';
 
 const route = express.Router();
 
@@ -203,7 +204,9 @@ route.get('/GroupGet/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res
 
         case 'G145LA': //NOT FOUND
             return ListOfAccount(req, res);
-
+        case 'G146WS':
+            if (!First || !Second) return error_msg(res);
+            return GetWildSearch(req, res)
         default:
             res.status(404).json({
                 error: "Error: 404, Invalid: Api Call Doesn't Exist."

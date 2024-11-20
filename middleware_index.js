@@ -46,6 +46,7 @@ import { BorrowersLoanHistoryRoute } from './routes/BorrowersLoanHistoryRoute.js
 import { BranchRoute } from './routes/BranchRoute.js'
 import { NDIRoute } from './routes/NDIRoute.js'
 import { VerifyRoute } from './routes/VerifyRoute.js'
+import { WildSearchRoute } from './routes/WildSearchRoute.js'
 
 dotenv.config()
 const app = express()
@@ -97,6 +98,7 @@ app.use(ACCESS, BorrowersLoanHistoryRoute)
 app.use(ACCESS, BranchRoute)
 app.use(ACCESS, NDIRoute)
 app.use(ACCESS, VerifyRoute)
+app.use(ACCESS, WildSearchRoute)
 
 //Compresed Routes
 app.use(ACCESS, GetRoutes)
