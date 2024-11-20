@@ -102,7 +102,7 @@ export async function DeleteDisbursement(req, res) {
 
 export async function UpdateStatDisbursement(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/updateStatDisbursement/${req.params.First}/${req.params.Second}/${req.params.Third}`,)
+    await axios.post(`${API}/updateStatDisbursement/${req.params.First}/${req.params.Second}/${req.params.Third}/${req.params.Fourth}`,)
         .then((result) => {
             res.json(result.data)
         })

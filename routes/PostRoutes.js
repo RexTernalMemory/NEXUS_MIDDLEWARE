@@ -192,7 +192,7 @@ route.post('/GroupPost/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, r
             if (!First) return error_msg(res);
             return DeleteDisbursement(req, res);
         case 'P125USD'://
-            if (!First || !Second || !Third) return error_msg(res);
+            if (!First || !Second || !Third || !Fourth) return error_msg(res);
             return UpdateStatDisbursement(req, res);
         case 'P126UFB'://
             if (!First || !Second) return error_msg(res);
