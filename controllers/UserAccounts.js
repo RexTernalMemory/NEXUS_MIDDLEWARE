@@ -116,7 +116,7 @@ export async function Login(req, res) {
             console.log('Message:', error.message);
             console.log('Status:', error.status);
             console.log('=========================================');
-            console.log('                                         ');
+            console.log('                                         '); 
             res.json({
                 status: error.status,
                 message: error.message,

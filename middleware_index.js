@@ -103,7 +103,7 @@ app.use(ACCESS, GetRoutes)
 app.use(ACCESS, PostRoutes)
 
 
-app.get('/test', (req, res) => {
+app.get(`${ACCESS}/test`, (req, res) => {
     res.send('ANO NG GALING MO');
 });
 
@@ -111,13 +111,13 @@ let platform = os.hostname()
 let arch = os.networkInterfaces()
 let usr = os.userInfo()
 
-app.get('/tester', (req, res) => {
+app.get(`${ACCESS}/tester`, (req, res) => {
     console.log(platform)
     console.log(arch)
     console.log(usr)
 });
 
-app.get('/hostname', (req, res) => {
+app.get(`${ACCESS}/hostname`, (req, res) => {
     console.log(req.ip)
     console.log(req.ips)
 });

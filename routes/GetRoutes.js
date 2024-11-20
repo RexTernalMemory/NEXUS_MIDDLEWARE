@@ -111,9 +111,9 @@ route.get('/GroupGet/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res
             return GetIDtype(req, res);
         case 'G28S'://
             return GetSuffix(req, res);
+        case 'G29CA':
+            return GetCollectionArea(req, res);
         /* NOT FOUND
-                case 'G29CA':
-                    return GetCollectionArea(req, res);
                 case 'G30JC'://Not yet implemented GetCollectionArea
                     return GetJobCategory(req, res);
                 case 'G31P': //Not yet implemented GetCollectionArea
