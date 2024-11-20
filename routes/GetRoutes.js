@@ -6,7 +6,7 @@ import { GetOtherLoanHistory } from '../controllers/BorrowersLoanHistory.js';
 import { GetBranch, GetBranchList } from '../controllers/Branch.js';
 import { GetCharacterRef, GetRelationship } from '../controllers/CharacterReference.js';
 import { GetCountryList, GetInternationalSubGroup } from '../controllers/Country.js';
-import { GetFileType } from '../controllers/FileUpload.js';
+import { GetFileType,GetFileList } from '../controllers/FileUpload.js';
 import { GetKaiser } from '../controllers/KaiserChecker.js';
 import { GetListLoanProduct, GetLoanConsultant, GetLoanPurpose } from '../controllers/LoanDetails.js';
 import { GetNDI, GetNDIData } from '../controllers/NDI.js';
@@ -80,7 +80,7 @@ route.get('/GroupGet/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res
             if (!First) return error_msg(res);
             return GetFileType(req, res);//
         case 'G17FL': //${req.params.loan_type}
-            return GetFileType(req, res);//
+            return GetFileList(req, res);//
         // UPLOADING FILES
 
         case 'G18K'://
