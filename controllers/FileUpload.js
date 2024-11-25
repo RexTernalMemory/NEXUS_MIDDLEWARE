@@ -42,7 +42,7 @@ export async function GetFileType(req, res) {
 
 export async function GetFileList(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getFileList/${req.params.LAI}/${req.params.PRID}/${req.params.USRID}`)
+    await axios.get(`${API}/getFileList/${req.params.First}/${req.params.Second}/${req.params.Third}`)
         .then((result) => {
             res.json(result.data)
         })
