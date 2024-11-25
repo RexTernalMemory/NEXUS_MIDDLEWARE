@@ -185,7 +185,6 @@ export async function UpdateFileStatus(req, res) {
 export async function UploadFileRel(req, res) {
     const { API } = process.env;
 
-    console.log("FILES", req.files)
     const formData = new FormData();
     const FileContainer = await ConvertToBlob(req.files);
     formData.append('client', req.body.client)
