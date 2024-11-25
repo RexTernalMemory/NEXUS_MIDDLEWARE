@@ -17,7 +17,7 @@ async function ConvertToBlob(files) {
 
 export async function GetFileType(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getFileType/${req.params.loan_type}`)
+    await axios.get(`${API}/getFileType/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })
