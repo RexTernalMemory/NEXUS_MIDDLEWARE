@@ -182,3 +182,49 @@ export async function UpdateFileStatus(req, res) {
         });
 }
 
+export async function UploadFileRel(req, res) {
+    const { API } = process.env;
+
+    console.log("FILES", req.files)
+    const formData = new FormData();
+    const FileContainer = await ConvertToBlob(req.files);
+    formData.append('client', req.body.client)
+    formData.append('docsID_list', req.body.docsID_list)
+    formData.append('status_list', req.body.status_list)
+    formData.append('remarks_list', req.body.remarks_list)
+    formData.append('docStatus_list', req.body.docStatus_list)
+    formData.append('prid', req.body.prid)
+    formData.append('Uploader', req.body.Uploader)
+
+    FileContainer.map(async (x) => {
+        const FileHolder = new File([x.data], { type: x.file.mimetype });
+        formData.append('files', FileHolder, x.file.originalname)
+    })
+
+    await axios.post(`${API}/uploadFileRel`, formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    })
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[POST REQUEST]');
+            console.log('FILE: FileUpload');
+            console.log('/uploadFileRel');
+            console.log('Code:', error.code);
+            console.log('Message:', error.message);
+            console.log('Status:', error.status);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
+        });
+}
+

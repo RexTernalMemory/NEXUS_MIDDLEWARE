@@ -8,7 +8,7 @@ import { AddLoanHistory, DeleteOtherLoanHistory, EditOtherLoanHistory } from '..
 import { AddBranch, UpdateBranch } from '../controllers/Branch.js';
 import { AddCharacterRef, DeleteCharacterRef, EditCharacterRef } from '../controllers/CharacterReference.js';
 import { AddCountry, EditCountry, GetInternationalGroup } from '../controllers/Country.js';
-import { UpdateFileStatus, UploadFileFin, UploadFileReq } from '../controllers/FileUpload.js';
+import { UpdateFileStatus, UploadFileFin, UploadFileRel, UploadFileReq } from '../controllers/FileUpload.js';
 import { GetKaiser } from '../controllers/KaiserChecker.js';
 import { AddMunicipality, EditMunicipality, GetMunicipalityList } from '../controllers/Municipality.js';
 import { AddNDISelection, DeleteNDI, UpdateNDI } from '../controllers/NDI.js';
@@ -25,6 +25,7 @@ import { AddOwnedProperties, DeleteOwnedProperties, EditOwnedProperties } from '
 import { VerifyUser } from '../controllers/Verify.js';
 import { AddCharges } from '../controllers/Charges.js';
 import { AddAdditionalCoborrower, AdditionalCoborrowerdelete } from '../controllers/AdditionalCoborrower.js';
+import { upload } from '../middleware/FileAuth.js';
 
 
 const route = express.Router();
@@ -34,7 +35,14 @@ function error_msg(res) {
     return res.status(400).json({ error: "Error: This API requires a parameter(s)." });
 }
 
-route.post('/GroupPost/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res) => {
+route.post('/GroupPost/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res, next) => {
+    const { CALL } = req.params;
+    const uploadRequiredAPIs = ['P147UFRL', 'P66UFR', 'P67UFF', 'P68FS'];
+    if (uploadRequiredAPIs.includes(CALL)) {
+        return upload.array('files')(req, res, next);
+    }
+    next();
+}, (req, res) => {
     const { CALL, First, Second, Third, Fourth, Fifth } = req.params;
     switch (CALL) {
         case 'P43AACB'://
@@ -98,6 +106,8 @@ route.post('/GroupPost/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, r
             return UploadFileFin(req, res);
         case 'P68FS'://
             return UpdateFileStatus(req, res);
+        case 'P147UFRL':
+            return UploadFileRel(req, res);
         // UPLOADING FILES
 
         case 'P69GK':// NOT FOUND

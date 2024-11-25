@@ -144,9 +144,9 @@ io.on('connection', (socket) => {
     })
 })
 
-server.listen(() => {
-    console.log(`IO Server: Listening on port ${PORT}`)
-})
+// server.listen(() => {
+//     console.log(`IO Server: Listening on port ${PORT}`)
+// })
 
 /*let value = 0;
 cron.schedule('* * * * *', () => {
