@@ -9,7 +9,7 @@ import { AddBranch, UpdateBranch } from '../controllers/Branch.js';
 import { AddCharacterRef, DeleteCharacterRef, EditCharacterRef } from '../controllers/CharacterReference.js';
 import { AddCountry, EditCountry, GetInternationalGroup } from '../controllers/Country.js';
 import { UpdateFileStatus, UploadFileFin, UploadFileRel, UploadFileReq } from '../controllers/FileUpload.js';
-import { GetKaiser } from '../controllers/KaiserChecker.js';
+import { UpdateKaiser } from '../controllers/KaiserChecker.js';
 import { AddMunicipality, EditMunicipality, GetMunicipalityList } from '../controllers/Municipality.js';
 import { AddNDISelection, DeleteNDI, UpdateNDI } from '../controllers/NDI.js';
 import { AddRelatives, EditRelatives, Relativedelete } from '../controllers/Relatives.js';
@@ -35,7 +35,7 @@ function error_msg(res) {
     return res.status(400).json({ error: "Error: This API requires a parameter(s)." });
 }
 
-route.post('/GroupPost/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res, next) => {
+route.post('/POST/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res, next) => {
     const { CALL } = req.params;
     const uploadRequiredAPIs = ['P147UFRL', 'P66UFR', 'P67UFF', 'P68FS'];
     if (uploadRequiredAPIs.includes(CALL)) {
@@ -111,7 +111,7 @@ route.post('/GroupPost/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, r
         // UPLOADING FILES
 
         case 'P69GK':// NOT FOUND
-            return GetKaiser(req, res);
+            return UpdateKaiser(req, res);
         case 'P70GML':// NOT FOUND
             return GetMunicipalityList(req, res);
         case 'P72AM'://
@@ -246,7 +246,7 @@ route.post('/GroupPost/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, r
             return VerifyUser(req, res);
         case 'P143AC': //NOT FOUND
             return AddCharges(req, res);
-        case 'P141UD': 
+        case 'P141UD':
             return GetPNNumber(req, res);
         default:
             res.status(404).json({
