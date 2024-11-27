@@ -48,7 +48,7 @@ export async function GetRelativesSuffix(req, res) {
 
 export async function GetRelatives(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getRelatives/${req.params.First}`)
+    await axios.get(`${API}/getRelatives/${req.params.First}/${req.params.Second}`)
         .then((result) => {
             res.json(result.data)
         })

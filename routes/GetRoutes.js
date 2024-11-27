@@ -128,7 +128,7 @@ route.get('/GET/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res) => 
         /*    case 'G34RS':    //Missing in BackEnd
                 return GetRelativesSuffix(req, res); */
         case 'G35R'://
-            if (!First) return error_msg(res);
+            if (!First || !Second) return error_msg(res);
             return GetRelatives(req, res);
         case 'G36SL'://
             if (!First || !Second) return error_msg(res);

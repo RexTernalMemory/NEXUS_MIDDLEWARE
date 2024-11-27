@@ -25,7 +25,7 @@ export async function GetChargerLPA(req, res) {
 
 export async function AddCharges(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/addCharges`, req.body)
+    await axios.post(`${API}/addCharges`, req.body)
         .then((result) => {
             res.json(result.data)
         })
