@@ -34,7 +34,7 @@ function error_msg(res) {
     return res.status(400).json({ error: "Error: This API requires a parameter(s)." });
 }
 
-route.get('/GET/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res) => {
+route.get('/GroupGet/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res) => {
     const { CALL, First, Second, Third, Fourth, Fifth } = req.params;
     switch (CALL) {
         case 'G1A'://
@@ -158,7 +158,7 @@ route.get('/GET/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res) => 
         case 'G100PT'://
             return GetPaymentType(req, res);
         case 'G101BL'://
-            if (!First) return error_msg(res);
+            if (!First || !Second) return error_msg(res);
             return GetBatchList(req, res);
         case 'G102AL'://
             return AvailableList(req, res);

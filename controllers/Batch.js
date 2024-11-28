@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function GetBatchList(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/getBatchList/${req.params.First}`)
+    await axios.get(`${API}/getBatchList/${req.params.First}/${req.params.Second}`)
         .then((result) => {
             res.json(result.data)
         })
