@@ -1,5 +1,5 @@
 import express from 'express';
-import { GetAppDataList, GetClientDataList, GetDuplicateLoans, TileCount } from '../controllers/ApplicationData.js';
+import { GetAppDataList, GetApprovedDataList, GetClientDataList, GetDuplicateLoans, TileCount } from '../controllers/ApplicationData.js';
 import { GetBarangay, GetBarangayList, GetMuniArea, GetProvince } from '../controllers/Barangay.js';
 import { GetAgency } from '../controllers/Agency.js';
 import { GetOtherLoanHistory } from '../controllers/BorrowersLoanHistory.js';
@@ -34,7 +34,7 @@ function error_msg(res) {
     return res.status(400).json({ error: "Error: This API requires a parameter(s)." });
 }
 
-route.get('/GroupGet/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res) => {
+route.get('/GET/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res) => {
     const { CALL, First, Second, Third, Fourth, Fifth } = req.params;
     switch (CALL) {
         case 'G1A'://
@@ -210,6 +210,9 @@ route.get('/GroupGet/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res
         case 'G148GK':
             if(!First || !Second) return error_msg(res);
             return GetKaiser(req, res);
+        case 'G149GA':
+            if(!First || !Second) return error_msg(res);
+            return GetApprovedDataList(req, res);
         default:
             res.status(404).json({
                 error: "Error: 404, Invalid: Api Call Doesn't Exist."
