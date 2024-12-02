@@ -50,7 +50,7 @@ export async function AddOwnAsset(req, res) {
 
 export async function EditOwnedAsset(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/editOwnedAsset`, req.body)
+    await axios.post(`${API}/editOwnedAssets`, req.body)
         .then((result) => {
             res.json(result.data)
         })
