@@ -359,7 +359,7 @@ export async function UnlockAccount(req, res) {
 
 export async function ValidateURL(req, res) {
     const { API } = process.env;
-    await axios.post(`${API}/validateURL/${req.params.URL}`)
+    await axios.post(`${API}/validateURL/${req.params.First}`)
         .then((result) => {
             res.json(result.data)
         })

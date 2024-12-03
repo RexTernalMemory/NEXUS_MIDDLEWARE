@@ -35,7 +35,7 @@ function error_msg(res) {
     return res.status(400).json({ error: "Error: This API requires a parameter(s)." });
 }
 
-route.post('/POST/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res, next) => {
+route.post('/GroupPost/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res, next) => {
     const { CALL } = req.params;
     const uploadRequiredAPIs = ['P147UFRL', 'P66UFR', 'P67UFF', 'P68FS'];
     if (uploadRequiredAPIs.includes(CALL)) {

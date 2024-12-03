@@ -34,7 +34,7 @@ function error_msg(res) {
     return res.status(400).json({ error: "Error: This API requires a parameter(s)." });
 }
 
-route.get('/GET/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res) => {
+route.get('/GroupGet/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res) => {
     const { CALL, First, Second, Third, Fourth, Fifth } = req.params;
     switch (CALL) {
         case 'G1A'://
@@ -80,6 +80,7 @@ route.get('/GET/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res) => 
             if (!First) return error_msg(res);
             return GetFileType(req, res);//
         case 'G17FL': //${req.params.loan_type}
+            if (!First || !Second || !Third) return error_msg(res);
             return GetFileList(req, res);//
         // UPLOADING FILES
 
