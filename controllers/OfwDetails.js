@@ -163,7 +163,7 @@ export async function GetJobCategory(req, res) {
 
 export async function GetPosition(req, res) {
     const { API } = process.env;
-    await axios.get(`${API}/OFWDetails/getPosition/${req.params.category}`)
+    await axios.get(`${API}/OFWDetails/getPosition`)
         .then((result) => {
             res.json(result.data)
         })
@@ -173,6 +173,29 @@ export async function GetPosition(req, res) {
             console.log('[GET REQUEST]', error);
             console.log('FILE: OfwDetails');
             console.log('/getPosition');
+            console.log('ERROR:', error);
+            console.log('=========================================');
+            console.log('                                         ');
+            res.json({
+                status: error.status,
+                message: error.message,
+                description: error.description
+            })
+        });
+}
+
+export async function GetSeaBasedJC(req, res) {
+    const { API } = process.env;
+    await axios.get(`${API}/OFWDetails/getSeaBasedJobCat`)
+        .then((result) => {
+            res.json(result.data)
+        })
+        .catch(error => {
+            console.log('                                         ');
+            console.log('=========================================');
+            console.log('[GET REQUEST]', error);
+            console.log('FILE: OfwDetails');
+            console.log('/getSeaBasedJobCat');
             console.log('ERROR:', error);
             console.log('=========================================');
             console.log('                                         ');

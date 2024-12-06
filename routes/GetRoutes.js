@@ -6,11 +6,11 @@ import { GetOtherLoanHistory } from '../controllers/BorrowersLoanHistory.js';
 import { GetBranch, GetBranchList } from '../controllers/Branch.js';
 import { GetCharacterRef, GetRelationship } from '../controllers/CharacterReference.js';
 import { GetCountryList, GetInternationalSubGroup } from '../controllers/Country.js';
-import { GetFileType,GetFileList } from '../controllers/FileUpload.js';
+import { GetFileType, GetFileList } from '../controllers/FileUpload.js';
 import { GetKaiser } from '../controllers/KaiserChecker.js';
 import { GetListLoanProduct, GetLoanConsultant, GetLoanPurpose } from '../controllers/LoanDetails.js';
 import { GetNDI, GetNDIData } from '../controllers/NDI.js';
-import { GetCollectionArea, GetCountry, GetIDtype, GetJobCategory, GetListRelationship, GetPosition, GetSuffix } from '../controllers/OfwDetails.js';
+import { GetCollectionArea, GetCountry, GetIDtype, GetJobCategory, GetListRelationship, GetPosition, GetSeaBasedJC, GetSuffix } from '../controllers/OfwDetails.js';
 import { GetProvinceselection } from '../controllers/Province.js';
 import { GetRelatives, GetRelativesRelationship, GetRelativesSuffix } from '../controllers/Relatives.js';
 import { GetRemarks, GetStatusList } from '../controllers/StatusRemarks.js';
@@ -115,13 +115,12 @@ route.get('/GET/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res) => 
             return GetSuffix(req, res);
         case 'G29CA':
             return GetCollectionArea(req, res);
-        /* NOT FOUND
-                case 'G30JC'://Not yet implemented GetCollectionArea
-                    return GetJobCategory(req, res);
-                case 'G31P': //Not yet implemented GetCollectionArea
-                    if (!First) return error_msg(res);
-                    return GetPosition(req, res);
-        */
+        case 'G30JC':
+            return GetJobCategory(req, res);
+        case 'G31P':
+            return GetPosition(req, res);
+        case 'G151SB':
+            return GetSeaBasedJC(req, res);
         case 'G32PS': //NOT FOUND
             return GetProvinceselection(req, res);
         case 'G33RR'://
@@ -209,14 +208,14 @@ route.get('/GET/:CALL/:First?/:Second?/:Third?/:Fourth?/:Fifth?', (req, res) => 
             if (!First || !Second) return error_msg(res);
             return GetWildSearch(req, res)
         case 'G148GK':
-            if(!First || !Second) return error_msg(res);
+            if (!First || !Second) return error_msg(res);
             return GetKaiser(req, res);
         case 'G149GA':
-            if(!First || !Second) return error_msg(res);
+            if (!First || !Second) return error_msg(res);
             return GetApprovedDataList(req, res);
         case 'G150TCR':
-            if(!First) return error_msg(res);
-            return GetTileCountByRole(req,res);
+            if (!First) return error_msg(res);
+            return GetTileCountByRole(req, res);
         default:
             res.status(404).json({
                 error: "Error: 404, Invalid: Api Call Doesn't Exist."
